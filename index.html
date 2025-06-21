@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="title-i18n"></title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1><i class="fa-brands fa-markdown"></i> Nodi</h1>
+      <ul id="note-list"></ul>
+      <button id="new-btn" onclick="newNote()">Nodyn newydd</button>
+    </aside>
+
+    <main class="main">
+      <div class="file-info">
+        <div><input classtype="text" id="note-title" placeholder="Teitl y nodyn" /></div>
+        <div id="save-status"></div>
+      </div>
+      <div class="editor-preview">
+        <textarea id="markdown-input" placeholder="Ysgrifennwch Markdown yma..."></textarea>
+  	<div class="resizer" id="resizer"></div>
+        <div id="preview" class="preview"></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn-tl" id="save-btn" onclick="saveNote()"><i class="fa-solid fa-floppy-disk"></i></button>
+        <button class="btn-tl" id="delete-btn" onclick="deleteNote()"><i class="fa-solid fa-trash"></i></button>
+        <input type="file" id="file-loader" accept=".md" style="display: none" />
+        <button class="btn-tl" id="load-btn" onclick="document.getElementById('file-loader').click()"><i class="fa-solid fa-upload"></i></button>
+        <button class="btn-tl" id="save-to-file-btn" onclick="saveToFile()"><i class="fa-solid fa-download"></i></button>
+	<select id="lang-picker">
+  	<option value="cy">🏴󠁧󠁢󠁷󠁬󠁳󠁿</option>
+    <option value="en">🇬🇧</option>
+	</select>
+
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

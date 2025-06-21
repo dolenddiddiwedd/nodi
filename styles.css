@@ -1,0 +1,206 @@
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: #f4f4f4;
+}
+
+.layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background: #333;
+  color: white;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.sidebar h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 6px;
+  cursor: pointer;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar li:hover {
+  background: #444;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 6px;
+  margin-top: 10px;
+  cursor: pointer;
+  background: #555;
+  border: none;
+  color: white;
+}
+
+.main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+input[type="text"] {
+  font-size: 16px;
+  padding: 6px;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.editor-preview {
+  display: flex;
+  gap: 20px;
+  flex-grow: 1;
+}
+
+textarea {
+  width: 50%;
+  height: 100%;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 14px;
+  resize: none;
+}
+
+.preview {
+  width: 50%;
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.actions {
+  margin-top: 10px;
+  display: block-inline;
+  gap: 10px;
+}
+
+.editor-preview {
+  display: flex;
+  gap: 0;
+  flex-grow: 1;
+  position: relative;
+}
+
+#note-title {
+  float: left;
+  border: none;
+  outline: none;      /* Removes the focus outline */
+  background: transparent;
+  font-size: 1.4em;   /* Optional: make it a bit bigger */
+  font-weight: bold;
+}
+
+#save-status {
+  float: right;
+}
+
+#lang-picker {
+  float:right;
+}
+
+textarea {
+  width: 50%;
+  height: 100%;
+  resize: none;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.preview {
+  width: 50%;
+  border: 1px solid #ccc;
+  background: white;
+  overflow-y: auto;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.resizer {
+  width: 5px;
+  cursor: ew-resize;
+  background: #ddd;
+  height: 100%;
+}
+
+.file-info {
+  display:inline-block;
+}
+
+button, select{
+  background-color: #555;   /* Soft blue */
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+button:hover, select:hover {
+  background-color: #444;
+}
+
+button:active, select:active {
+  transform: scale(0.97);
+}
+
+button:disabled, select:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+
+
+.btn-tl {
+  position: relative;
+  border: none;
+  cursor: pointer;
+}
+
+
+/* Tooltip styling via pseudo-element */
+.btn-tl::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 125%; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  font-size: 0.85em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.btn-tl:hover::after {
+  opacity: 1;
+}
+
