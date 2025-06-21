@@ -134,7 +134,7 @@ function saveNote() {
   lastSavedContent = input.value;
   unsavedChanges = false;
   localStorage.setItem('openNoteTitle', title);
-  alert(translations[currentLang].saveSuccess);
+//  alert(translations[currentLang].saveSuccess);
   refreshNoteList();
 }
 
@@ -153,7 +153,7 @@ function deleteNote() { // CHANGED: Now deletes from localStorage
   preview.innerHTML = '';
   unsavedChanges = false;
   refreshNoteList();
-  alert(translations[currentLang].deleteSuccess);
+//  translations[currentLang].deleteSuccess);
   localStorage.removeItem('openNoteTitle');
 }
 
