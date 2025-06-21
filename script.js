@@ -4,10 +4,9 @@ const preview = document.getElementById('preview');
 const titleInput = document.getElementById('note-title');
 const noteList = document.getElementById('note-list');
 const langPicker = document.getElementById('lang-picker');
-const API = '/api/notes';
 
 let lastSavedContent = '';
-let currentLang = 'cy';
+let currentLang = 'en';
 let unsavedChanges = false;
 
 const translations = {
